@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity 17</title>
+
+    <style>
+        body{
+            background-color: rgb(206, 228, 248);
+            font-size: medium;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .container{
+            padding-top: 100px;
+            text-align: center;
+        }
+        input, select {
+            width: 30%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .result{
+            width: 10%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .button {
+            background-color: #0c75ec;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            transition-duration: 0.4s;
+            border-radius: 15px;
+        }
+        .button:hover {
+            box-shadow: 0 5px 10px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Activity #17</h2> <br>
+        <p><input id="first" placeholder="Enter First Number"></p>
+        <p><input id="second" placeholder="Enter Second Number"></p>
+        <button onclick="add()" class="button">Calculate</button>
+        <p>Sum = <input id = "sum" class="result"></p>
+        <p> The Number is <input id = "OddEven" class="result"></p>
+    </div>
+    <script>
+        function add()
+        {
+          var num1, num2, sum, res, OddEven;
+          num1 = parseInt(document.getElementById("first").value);
+          num2 = parseInt(document.getElementById("second").value);
+          sum = num1 + num2;
+          document.getElementById("sum").value = sum;
+
+          res = sum % 2;
+            if (res == 1){
+                OddEven = "Odd";
+            }
+            else if (res == 0){
+                OddEven = "Even";
+            }
+
+            document.getElementById("OddEven").value = OddEven;
+        }
+       
+ 
+
+
+
+        </script>
+
+
+</body>
+</html>
