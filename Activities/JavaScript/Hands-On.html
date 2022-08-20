@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hands On Activity</title>
+
+    <style>
+        body{
+            background-color: rgb(206, 228, 248);
+            font-size: medium;
+            font-family: Arial, Helvetica, sans-serif;
+            padding-bottom: 20px;
+        }
+        .container{
+            padding-top: 10px;
+            text-align: center;
+        }
+        input, select {
+            width: 30%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .result{
+            width: 10%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .button {
+            background-color: #0c75ec;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            transition-duration: 0.4s;
+            border-radius: 15px;
+        }
+        .button:hover {
+            box-shadow: 0 5px 10px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+        }
+    </style>
+
+
+</head>
+<body>
+    <div class="container">
+        <h2>Hands On Activity</h2> <br>
+        <p><input id="com" placeholder="Enter Your Computer Grade"></p>
+        <p><input id="math" placeholder="Enter Your Mathematics Grade"></p>
+        <p><input id="eng" placeholder="Enter Your English Grade"></p>
+        <p><input id="sci" placeholder="Enter Your Science Grade"></p>
+        <p><input id="fil" placeholder="Enter your Filipino Grade"></p>
+
+
+
+
+        <button onclick="myGrade()" class="button">Calculate</button>
+        <p>GWA <input id = "gwa" class="gwa-grade"></p>
+        <p> Grade Mark <input id = "grade" class="grade"></p>
+    </div>
+    <script>
+        function myGrade()
+        {
+            var com, math, eng, sci, fil, gwa, grade, sum;
+
+          com = parseInt(document.getElementById("com").value);
+          math = parseInt(document.getElementById("math").value);
+          eng = parseInt(document.getElementById("eng").value);
+          sci = parseInt(document.getElementById("sci").value);
+          fil = parseInt(document.getElementById("fil").value);
+
+          sum = com + math + eng + sci + fil;
+          gwa = sum / 5;
+
+          document.getElementById("gwa").value = gwa;
+        
+
+
+          if (gwa>=92){
+            grade = "A";
+          }
+          else if (gwa <= 91 && gwa >=89 ){
+            grade = "B";
+          }else if (gwa <=88 && gwa >= 84){
+            grade = "C";
+          }else if (gwa <=83 && gwa >= 80){
+            grade = "D";
+          }else if (gwa <=79){
+            grade = "E";
+          }
+
+          document.getElementById("grade").value = grade;
+          
+        }
+       
+        </script>
+
+</body>
+</html>
